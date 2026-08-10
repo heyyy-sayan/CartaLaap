@@ -1,0 +1,3 @@
+package com.cartalaap.notification;
+import java.time.Instant;
+public record NotificationResponse(Long id,NotificationType type,String message,Long targetId,Actor actor,Instant createdAt,boolean read){static NotificationResponse from(Notification n){var a=n.getActor();return new NotificationResponse(n.getId(),n.getType(),n.getMessage(),n.getTargetId(),a==null?null:new Actor(a.getId(),a.getUsername(),a.getDisplayName(),a.getAvatarUrl()),n.getCreatedAt(),n.getReadAt()!=null);}public record Actor(Long id,String username,String displayName,String avatarUrl){} public record Count(long unreadCount){} }

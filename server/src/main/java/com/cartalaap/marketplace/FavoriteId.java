@@ -1,0 +1,3 @@
+package com.cartalaap.marketplace;
+import java.io.Serializable;import java.util.Objects;import jakarta.persistence.Column;import jakarta.persistence.Embeddable;
+@Embeddable public class FavoriteId implements Serializable{@Column(name="user_id")private Long userId;@Column(name="listing_id")private Long listingId;protected FavoriteId(){}public FavoriteId(Long userId,Long listingId){this.userId=userId;this.listingId=listingId;}@Override public boolean equals(Object o){return this==o||o instanceof FavoriteId that&&Objects.equals(userId,that.userId)&&Objects.equals(listingId,that.listingId);}@Override public int hashCode(){return Objects.hash(userId,listingId);}}

@@ -1,0 +1,2 @@
+package com.cartalaap.garage;import java.util.List;import java.util.Optional;import org.springframework.data.jpa.repository.EntityGraph;import org.springframework.data.jpa.repository.JpaRepository;
+public interface GarageVehicleRepository extends JpaRepository<GarageVehicle,Long>{@EntityGraph(attributePaths={"owner","images"})List<GarageVehicle>findByOwner_UsernameIgnoreCaseOrderByCreatedAtDesc(String username);@EntityGraph(attributePaths={"owner","images"})Optional<GarageVehicle>findDetailedById(Long id);}

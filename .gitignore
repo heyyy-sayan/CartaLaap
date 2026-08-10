@@ -1,0 +1,15 @@
+.env
+.idea/
+.vscode/
+*.iml
+
+client/node_modules/
+client/dist/
+
+server/target/
+server/src/main/resources/application-local.properties
+
+*.log
+uploads/
+.DS_Store
+Thumbs.db
